@@ -1,0 +1,150 @@
+<style>
+    :root{
+        --blue:#0047a0;
+        --red:#cd2e3a;
+    }
+
+    body{
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .taegeukgi{
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .taegeuk{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(var(--red) 50%,var(--blue) 0);
+        border-radius: 1in;
+        rotate: 34deg;
+    }
+
+    .taegeuk::before{
+        position: absolute;
+        content:"";
+        width: 50px;
+        height: 50px;
+        background-color: #cd2e3a;
+        border-radius: 1in;
+        margin: 25px 0;
+        box-shadow:50px 0 #0047a0;
+    }
+
+    .trigrams{
+    position: absolute;
+    width: 80%;
+    height: 65%;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    gap:60px;
+}
+
+.top,
+.bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sky,
+.water,
+.fire,
+.earth{
+    width: 50px;
+    display: grid;
+    gap:5px;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
+}
+
+.brick{
+    background-color: rgb(0, 0, 0);
+}
+.sky{
+    grid-template-columns: 1fr;
+}
+
+.water{
+    grid-template-columns: repeat(2,1fr);
+}
+.water .brick:nth-child(3){
+    grid-column: span 2;
+}
+
+.fire{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.fire .brick:first-child,
+.fire .brick:last-child
+{
+grid-column: span 2;
+}
+
+.sky,
+.earth{
+    transform:rotate(-50deg);
+}
+
+.water,
+.fire{
+    transform:rotate(50deg);
+}
+
+.corner-stips.top{
+    rotate: -34deg;
+}
+.corner-stips.bottom{
+    rotate: 34deg;
+}
+</style>
+<body>
+    
+    <div class="taegeukgi">
+        <div class="taegeuk"></div>
+        <div class="trigrams">
+            <div class="top">
+                <div class="sky">
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                </div>
+                <div class="water">                    
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="fire">
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                </div>
+                <div class="earth">
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                    <span class="brick"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
