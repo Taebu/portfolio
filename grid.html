@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  body{
+  font-family: 'Montserrat',sans-serif;
+  margin: 0;
+  }
+
+  .container{
+  display:grid;
+  grid-gap: 10px;
+  height: 100vh;
+  grid-template-columns:300px 1fr 300px;
+  grid-template-rows:100px 150px 1fr 150px 100px;
+  grid-template-areas:
+  'header header header'
+  'menu main top'
+  'menu main aside'
+  'menu main bottom'
+  'footer footer footer';
+  }
+ .container div{
+ background-color: skyblue;
+ padding: 20px;
+ border: 1px solid #000;
+ justify-items:center;
+ align-items:center;
+ }
+.header{
+  grid-area:header;
+}
+.menu{
+  grid-area:menu;
+}
+.main{
+  grid-area:main;
+}
+.top{
+  grid-area:top;
+}
+.aside{
+  grid-area:aside;
+}
+.bottom{
+  grid-area:bottom;
+}
+.footer{
+  grid-area:footer;
+}
+
+
+  </style>
+ </head>
+ <body>
+  <div class="container">
+  	<div class="header">header</div>
+  	<div class="menu">menu</div>
+  	<div class="main">main</div>
+  	<div class="top">top</div>
+  	<div class="aside">aside</div>
+  	<div class="bottom">bottom</div>
+  	<div class="footer">footer</div>
+  </div>
+ </body>
+</html>
